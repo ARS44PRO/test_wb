@@ -1,0 +1,8 @@
+.dockerignore
+node_modules
+.vscode
+.sql
+.idea
+dist
+google_api
+./.apa.txt
