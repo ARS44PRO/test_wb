@@ -1,8 +1,7 @@
 function myFunction() {
-  function onEdit(e) {
-  let range = SpreadsheetApp.getActiveSpreadsheet().getDataRange();
-  let columnToSort = 1;
-  let sheet = e.range.getSheet();
-  range.sort( { column : columnToSort, ascending: true } );
-}
+  let sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName('stocks_coefs');
+  let range = sheet.getDataRange();
+  let rangeWithoutHeader = range.offset(1, 0, range.getNumRows() - 1, range.getNumColumns());
+  let columnToSort = 4;
+  rangeWithoutHeader.sort( { column : columnToSort, ascending: true } );
 }
